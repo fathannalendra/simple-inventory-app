@@ -5,67 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aplikasi Data Barang Sederhana</title>
+   
 </head>
 
 <body>
-    <script>
-        let barang = []
-
-        let dataBarang = {
-            addBarang: function () {
-                function mintaNilai(pesan){
-                    let nilai
-                    do{
-                        nilai = prompt(pesan)
-                        nilai = nilai.trim()
-                    } while(!nilai)
-                    return nilai
-                }
-
-                let nama = mintaNilai("Masukkan nama barang")
-                let jumlah = mintaNilai("Masukkan jumlah barang")
-                let hargaSatuan = mintaNilai("Masukkan harga satuan barang")
-
-                let newBarang = { nama, jumlah, hargaSatuan }
-
-                //memasukkan data barang ke array barang
-                barang.push(newBarang)
-
-                alert("Data berhasil ditambah")
-            },
-
-            showBarang: function () {
-                if (barang.length === 0) {
-                    document.writeln(`<p>Tidak ada barang yang tersedia</p>`)
-                } else {
-                    let total = 0
-                    let hargaTotalBarang = 0
-                    for (const isi of barang) {
-                        let { nama, jumlah, hargaSatuan } = isi
-                        hargaTotalBarang = parseFloat(jumlah) * parseFloat(hargaSatuan)
-                        total += hargaTotalBarang
-                        document.writeln(`<p>Nama : ${nama} |Jumlah : ${jumlah} |Harga Satuan: Rp${hargaSatuan} |Harga Total Barang: Rp${hargaTotalBarang}</p>`)
-                    }
-                    //menampilkan total harga
-                    document.writeln(`Total Harga Keseluruhan = Rp${total}`)
-                }
-
-            },
-
-        }
-
-        let a = prompt("Berapa barang yang ingin Anda input?")
-        if (a > 0) {
-            for (let i = 1; i <= a; i++) {
-                //menambahkan barang
-                dataBarang.addBarang()
-            }
-            //menampilkan barang
-            dataBarang.showBarang()
-        }
-
-
-    </script>
+    <script src="script.js"></script>
 </body>
 
 </html>
